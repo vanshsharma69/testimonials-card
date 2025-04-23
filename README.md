@@ -50,8 +50,8 @@ This project showcases a clean, responsive testimonial section that can be integ
 
 ## **👨‍💻 Author**  
 **Vansh**  
-- 📫 **Email**: isedenlive@gmail.com  
-- 🔗 **GitHub**: [YourProfile](https://github.com/your-username)  
+- 📫 **Email**: 01vanshsharma@gmail.com  
+- 🔗 **GitHub**: [vanshsharma69](https://github.com/vanshsharma69)  
 
 ---
 
