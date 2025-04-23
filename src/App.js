@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import reviews from './data';
+import Testimonial from './components/Testimonial';
 
 function App() {
+  const [currentReviewIndex, setCurrentReviewIndex] = useState(0);
+
+  const handleNext = () => {
+    if (currentReviewIndex < reviews.length - 1) {
+      setCurrentReviewIndex(currentReviewIndex + 1);
+    }
+  };
+
+  const handlePrev = () => {
+    if (currentReviewIndex > 0) {
+      setCurrentReviewIndex(currentReviewIndex - 1);
+    }
+  };
+
+  const handleSurpriseMe = () => {
+    const randomIndex = Math.floor(Math.random() * reviews.length);
+    setCurrentReviewIndex(randomIndex);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="App bg-gradient-to-r from-yellow-400 to-red-600 min-h-screen flex items-center justify-center py-10">
+      <div className="w-full max-w-3xl bg-white rounded-lg shadow-2xl p-8">
+        <Testimonial
+          review={reviews[currentReviewIndex]}
+          onNext={handleNext}
+          onPrev={handlePrev}
+          onSurprise={handleSurpriseMe}
+        />
+      </div>
     </div>
   );
 }
